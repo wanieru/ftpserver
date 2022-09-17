@@ -78,6 +78,13 @@ func (s *Server) GetSettings() (*serverlib.Settings, error) {
 	return &serverlib.Settings{
 		ListenAddr:               conf.ListenAddress,
 		PublicHost:               conf.PublicHost,
+		ActiveTransferPortNon20:  conf.ActiveTransferPortNon20,
+		DisableActiveMode:        conf.DisableActiveMode,
+		ConnectionTimeout:        conf.ConnectionTimeout,
+		IdleTimeout:              conf.IdleTimeout,
+		Banner:                   conf.Banner,
+		EnableHASH:               conf.EnableHASH,
+		EnableCOMB:               conf.EnableCOMB,
 		PassiveTransferPortRange: portRange,
 	}, nil
 }

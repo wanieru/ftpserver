@@ -51,6 +51,13 @@ type Content struct {
 	MaxClients               int        `json:"max_clients"`                 // Maximum clients who can connect
 	Accesses                 []*Access  `json:"accesses"`                    // Accesses offered to users
 	PassiveTransferPortRange *PortRange `json:"passive_transfer_port_range"` // Listen port range
+	ActiveTransferPortNon20  bool       `json:"active_transfer_port_non_20"` // Do not use port 20 for active transfer
+	DisableActiveMode        bool       `json:"disable_active_mode"`         // Disable active mode
+	IdleTimeout              int        `json:"idle_timeout"`                // Idle timeout
+	ConnectionTimeout        int        `json:"connection_timeout"`          // Connection timeout
+	EnableHASH               bool       `json:"enable_hash"`                 // Enable HASH commands
+	EnableCOMB               bool       `json:"enable_comb"`                 // Enable COMB commands
+	Banner                   string     `json:"banner"`                      // Banner
 	Logging                  Logging    `json:"logging"`                     // Logging parameters
 	TLS                      *TLS       `json:"tls"`                         // TLS Config
 }
