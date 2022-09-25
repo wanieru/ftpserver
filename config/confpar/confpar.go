@@ -52,6 +52,7 @@ type Content struct {
 	MaxClients               int        `json:"max_clients"`                 // Maximum clients who can connect
 	Accesses                 []*Access  `json:"accesses"`                    // Accesses offered to users
 	PassiveTransferPortRange *PortRange `json:"passive_transfer_port_range"` // Listen port range
+	ActiveTransferPortNon20  bool       `json:"active_transfer_port_non_20"` // Active transfer without using port 20
 	Logging                  Logging    `json:"logging"`                     // Logging parameters
 	TLS                      *TLS       `json:"tls"`                         // TLS Config
 }

@@ -51,6 +51,11 @@
                 200
             ]
         },
+        "active_transfer_port_non_20": {
+            "type": "boolean",
+            "default": false,
+            "title": "Do not require to start active transferts from the 20 TCP port"
+        },
         "passive_transfer_port_range": {
             "type": "object",
             "default": {},
