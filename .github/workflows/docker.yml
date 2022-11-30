@@ -33,9 +33,16 @@ jobs:
         with:
           images: |
             wanieru/ftpserver
+          flavor: |
+            suffix=${{ matrix.type != '' && format('-{0}', matrix.type) || '' }}
+            latest=false
           tags: |
             type=semver,pattern={{version}}
-            type=semver,pattern=latest
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}
+            type=semver,suffix=,pattern=${{ matrix.type != '' && matrix.type || 'latest' }}
+            type=ref,event=branch
+            type=ref,event=pr
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker Buildx
